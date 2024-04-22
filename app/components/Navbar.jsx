@@ -1,12 +1,21 @@
+"use client"
+
 import Link from "next/link";
 import { Press_Start_2P } from "next/font/google";
 
 const pressStart2P = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 
 const Navbar = () => {
+
+    const mobileMenuToggle = () => {
+        const menuContent = document.getElementById("menu-content");
+
+        menuContent.classList.toggle("hidden");
+    }
+
     return (
-        <nav className="bg-transparent">
-            <div className="container mx-auto px-4 py-2 flex justify-between items-center md:flex-row md:space-x-8">
+        <nav className={`${pressStart2P.className} bg-transparent z-[100] absolute w-full`}>
+            <div className="container mx-auto px-4 py-2 flex flex-col justify-center items-center md:flex-row md:space-x-8">
                 <div className="hidden md:flex items-center space-x-4">
                     <Link
                     className="text-white hover:text-gray-400 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white" 
@@ -24,7 +33,10 @@ const Navbar = () => {
                         About
                     </Link>
                 </div>
-                <button id="menu-toggle" className="md:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                <button 
+                id="menu-toggle" 
+                className="md:hidden block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                onClick={mobileMenuToggle}>
                     <svg 
                     className="w-6 h-6 text-white fill-current"
                     viewBox="0 0 20 20"
@@ -34,7 +46,7 @@ const Navbar = () => {
                 </button>
                 <div 
                 id="menu-content"
-                className="md:hidden absolute top-full left-0 w-full py-4 mt-2 bg-gray-800 rounded-lg shadow-xl">
+                className="md:hidden block top-full left-0 w-full py-4 mt-2 bg-gray-800 rounded-lg shadow-xl">
                     <ul className="space-y-2 px-3">
                         <li>
                             <Link href="/" className="text-white hover:text-gray-400 block px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Home</Link>

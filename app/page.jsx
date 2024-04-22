@@ -5,8 +5,10 @@ const rubikMonoOne = Rubik_Mono_One({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
-    <main>
-      <h1 className="font-bold text-2xl text-gray-700 underline">ArkadeGFX</h1>
+    <main className={rubikMonoOne.className}>
+      <div id="headerSection">
+
+      </div>
     </main>
   );
 }
