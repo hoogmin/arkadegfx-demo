@@ -32,9 +32,10 @@ body {
   }
 }
 
-#headerSection {
-  width: 100%;
-  height: 1079px;
-  background: url('/img/banner1.jpg');
-  filter: brightness(0.7);
+.home-section {
+  height: 500px;
+}
+
+.home-section-content {
+  height: 500px;
 }
