@@ -20,6 +20,22 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <div className="relative overflow-hidden home-section">
+        <div className="absolute inset-0 bg-[url('/img/banner2.jpg')] bg-cover bg-center brightness-50"></div>
+        <div className="home-section-content relative z-10 flex flex-col md:flex-row justify-left max-sm:justify-center items-center w-full">
+          <p className="text-uppercase text-2xl w-[300px] drop-shadow-lg md:ml-[220px] max-md:mt-50">
+            Perfect neon atmosphere. Lose yourself for hours with no sense of time.
+          </p>
+        </div>
+      </div>
+      <div className="relative overflow-hidden home-section">
+        <div className="absolute inset-0 bg-[url('/img/banner3.jpg')] bg-cover bg-center brightness-50"></div>
+        <div className="home-section-content relative z-10 flex flex-col md:flex-row justify-right max-sm:justify-center items-center w-full">
+          <p className="text-uppercase text-2xl w-[300px] drop-shadow-lg md:mr-[220px] max-md:mt-50">
+            Bring the whole family along. There's enough fun for all ages.
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

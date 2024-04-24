@@ -10,3 +10,8 @@ for this one as I am questioning the usefulness of the latter right now.
 
 This project is open-source under the BSD-3-Clause license.
 See [LICENSE](./LICENSE) file for details.
+
+# Images
+The banner images used in this project are freely usable from unsplash.
+Credit goes to those photographers.
+The logo is an original creation, though AI generated for this demo.
