@@ -30,9 +30,26 @@ export default function Home() {
       </div>
       <div className="relative overflow-hidden home-section">
         <div className="absolute inset-0 bg-[url('/img/banner3.jpg')] bg-cover bg-center brightness-50"></div>
-        <div className="home-section-content relative z-10 flex flex-col md:flex-row justify-right max-sm:justify-center items-center w-full">
-          <p className="text-uppercase text-2xl w-[300px] drop-shadow-lg md:mr-[220px] max-md:mt-50">
+        <div className="home-section-content relative z-10 flex flex-col md:flex-row justify-end max-sm:justify-center items-center w-full">
+          <p className="text-uppercase text-2xl w-[300px] drop-shadow-lg md:mr-[420px] max-md:mt-50">
             Bring the whole family along. There's enough fun for all ages.
+          </p>
+        </div>
+      </div>
+      <div className="relative overflow-hidden home-section">
+        <div className="absolute inset-0 bg-[url('/img/banner4.jpg')] bg-cover bg-center brightness-50"></div>
+        <div className="home-section-content relative z-10 flex flex-col md:flex-row justify-center items-center w-full">
+          <p className="text-uppercase text-2xl w-[300px] drop-shadow-lg md:mb-20">
+            $10 for 1 hour,<br/>
+            $15 ALL DAY.<br/>
+            <br/>
+            Come join us.
+          </p>
+          <p className="text-uppercase text-2xl w-[300px] drop-shadow-lg md:mt-20 max-md:mt-10">
+            1304 DUFF AVENUE
+            SOUTH BURLINGTON
+            VERMONT 05403
+            802-370-5744
           </p>
         </div>
       </div>
