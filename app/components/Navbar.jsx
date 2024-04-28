@@ -1,20 +1,46 @@
 "use client"
 
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Press_Start_2P } from "next/font/google";
+import { Red_Hat_Mono } from "next/font/google";
 
-const pressStart2P = Press_Start_2P({ subsets: ["latin"], weight: "400" });
+const redHatMono = Red_Hat_Mono({ subsets: ["latin"], weight: "400" });
 
 const Navbar = () => {
+    const mobileMenuRef = useRef(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const mobileBreakpoint = 768;
 
     const mobileMenuToggle = () => {
-        const menuContent = document.getElementById("menu-content");
+        console.log(`OPEN?: ${isMobileMenuOpen}`);
 
-        menuContent.classList.toggle("hidden");
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     }
 
+    const handleClickOutside = (e) => {
+        if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+            setIsMobileMenuOpen(false);
+        }
+    }
+
+    const handleResize = () => {
+        if (window.innerWidth > mobileBreakpoint) {
+            console.log("RESIZED");
+            setIsMobileMenuOpen(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("mousedown", handleClickOutside);
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("mousedown", handleClickOutside);
+            window.removeEventListener("resize", handleResize);
+        }
+    }, []);
+
     return (
-        <nav className={`${pressStart2P.className} bg-transparent z-[100] absolute w-full`}>
+        <nav className={`${redHatMono.className} bg-transparent z-[100] absolute w-full text-2xl`}>
             <div className="container mx-auto px-4 py-2 flex flex-col justify-center items-center md:flex-row md:space-x-8">
                 <div className="hidden md:flex items-center space-x-4">
                     <Link
@@ -45,8 +71,9 @@ const Navbar = () => {
                     </svg>
                 </button>
                 <div 
+                ref={mobileMenuRef}
                 id="menu-content"
-                className="md:hidden block top-full left-0 w-full py-4 mt-2 bg-gray-800 rounded-lg shadow-xl">
+                className={`${isMobileMenuOpen ? "block" : "hidden"} top-full left-0 w-full py-4 mt-2 bg-gray-800 rounded-lg shadow-xl`}>
                     <ul className="space-y-2 px-3">
                         <li>
                             <Link href="/" className="text-white hover:text-gray-400 block px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Home</Link>

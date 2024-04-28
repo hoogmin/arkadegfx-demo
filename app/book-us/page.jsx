@@ -13,7 +13,7 @@ const BookUsPage = () => {
     }
 
     return (
-        <div className="container flex flex-col justify-center items-center w-[100vw] h-[100vh] mx-auto bg-[url('/img/bookus_bg.jpg')] px-8 pt-6 pb-8">
+        <div className="overflow-x-hidden max-w-[100%] flex flex-col justify-center items-center w-[100vw] h-[100vh] mx-auto bg-[url('/img/bookus_bg.jpg')] bg-center px-8 pt-6 pb-8">
             <div className="mb-4">
                 <label 
                 className="block text-white text-sm font-bold mb-2 drop-shadow-md" 

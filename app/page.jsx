@@ -10,6 +10,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('/img/banner1.jpg')] bg-cover bg-center brightness-50"></div>
         <div className="home-section-content relative z-10 flex flex-col md:flex-row justify-center items-center">
           <Image
+          className="w-auto h-auto"
           src="/img/logo.png"
           width={300}
           height={200}
